@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Healthy Life Clinic</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            background-color: #1e3a8a;
+        }
+
+        .navbar .nav-link {
+            color: #fff;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-link:hover {
+            color: #3b82f6;
+        }
+
+        .navbar .navbar-brand {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        .navbar .navbar-toggler {
+            border-color: #fff;
+        }
+
+        /* ===== Section Title ===== */
+        .section-title {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* ===== Service Cards ===== */
+        .service-card {
+            border-radius: 15px;
+            border: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+
+        .service-card h5 {
+            font-size: 1.3rem;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 15px;
+        }
+
+        /* Gradient backgrounds */
+        .service-card.bg-gradient-1 { background: linear-gradient(145deg, #eff6ff, #dbeafe); }
+        .service-card.bg-gradient-2 { background: linear-gradient(145deg, #fef3c7, #fde68a); }
+        .service-card.bg-gradient-3 { background: linear-gradient(145deg, #dcfce7, #bbf7d0); }
+        .service-card.bg-gradient-4 { background: linear-gradient(145deg, #fee2e2, #fecaca); }
+        .service-card.bg-gradient-5 { background: linear-gradient(145deg, #ede9fe, #ddd6fe); }
+        .service-card.bg-gradient-6 { background: linear-gradient(145deg, #fff7ed, #ffedd5); }
+
+        @media (max-width: 768px) {
+            .section-title { font-size: 2rem; margin-bottom: 30px; }
+            .service-card h5 { font-size: 1.1rem; }
+            .service-icon { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== Navbar ===== -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Healthy Life Clinic :)</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#clinicNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="clinicNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="{% url 'services' %}">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{% url 'visitor_action' %}">Visitor Log</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== Services Section ===== -->
+<section class="container my-5">
+    <h2 class="section-title">Our Medical Services</h2>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card service-card h-100 text-center p-4 bg-gradient-1">
+                <i class="fas fa-heartbeat service-icon"></i>
+                <h5>General Health Checkups</h5>
+                <p>Routine and preventive health checkups for all age groups.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card service-card h-100 text-center p-4 bg-gradient-2">
+                <i class="fas fa-apple-alt service-icon"></i>
+                <h5>Diet & Nutrition Plans</h5>
+                <p>Personalized diet plans for diabetes, thyroid, heart and renal care.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card service-card h-100 text-center p-4 bg-gradient-3">
+                <i class="fas fa-ambulance service-icon"></i>
+                <h5>24/7 Emergency Care</h5>
+                <p>Emergency medical support available round the clock.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card service-card h-100 text-center p-4 bg-gradient-4">
+                <i class="fas fa-heart service-icon"></i>
+                <h5>Cardiac Care</h5>
+                <p>Heart health evaluation and hypertension management.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card service-card h-100 text-center p-4 bg-gradient-5">
+                <i class="fas fa-baby service-icon"></i>
+                <h5>Pregnancy Nutrition</h5>
+                <p>Specialized nutrition guidance during pregnancy and lactation.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card service-card h-100 text-center p-4 bg-gradient-6">
+                <i class="fas fa-user-md service-icon"></i>
+                <h5>Specialist Consultation</h5>
+                <p>Consultation with experienced specialist doctors.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

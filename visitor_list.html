@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visitor Entry Log</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-top: 30px;
+            font-size: 2em;
+        }
+
+        a.add-btn {
+            display: inline-block;
+            background-color: #1e40af;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+
+        a.add-btn:hover {
+            background-color: #3b82f6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1e3a8a;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f3f4f6;
+        }
+
+        tr:hover {
+            background-color: #e0e7ff;
+        }
+
+        td a {
+            text-decoration: none;
+            color: #1e40af;
+            font-weight: bold;
+            margin-right: 10px;
+            transition: color 0.3s;
+        }
+
+        td a:hover {
+            color: #3b82f6;
+        }
+
+        @media (max-width: 768px) {
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            a.add-btn {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Visitor Entry Log</h2>
+
+    <a class="add-btn" href="/add/">Add Visitor</a>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Purpose</th>
+            <th>In Time</th>
+            <th>Out Time</th>
+            <th>Contact</th>
+            <th>Actions</th>
+        </tr>
+        {% for v in visitors %}
+        <tr>
+            <td>{{ v.visitor_name }}</td>
+            <td>{{ v.purpose }}</td>
+            <td>{{ v.in_time }}</td>
+            <td>{{ v.out_time }}</td>
+            <td>{{ v.contact_number }}</td>
+            <td>
+                <a href="/update/{{ v.id }}/">Edit</a>
+                <a href="/delete/{{ v.id }}/">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
